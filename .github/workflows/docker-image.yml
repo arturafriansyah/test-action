@@ -16,7 +16,7 @@ jobs:
 
       - name: Login to registry Adinusa
         run: |
-          echo ${{ secrets.HARBOR_REGISTRY_PASS }} | docker login registry.adinusa.id -u btacademy --password-stdin
+          echo "${{ secrets.HARBOR_REGISTRY_PASS }} | docker login registry.adinusa.id -u btacademy --password-stdin
       
       - name: Build and Push to Harbor
         run: |
