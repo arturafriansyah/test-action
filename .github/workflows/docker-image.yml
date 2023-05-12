@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: docker-runner-gh
+    runs-on: gh-docker-runner
     steps:
       - uses: actions/checkout@v2
       
