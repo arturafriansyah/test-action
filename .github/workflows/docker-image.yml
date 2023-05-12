@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: afrisyah/flask-latihan03:latest
+          tags: afrisyah/flask-latihan03:old
