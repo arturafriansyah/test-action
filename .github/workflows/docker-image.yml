@@ -14,10 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Login to registry Adinusa
-        run: |
-          echo "${{ secrets.HARBOR_REGISTRY_PASS }}" | docker login registry.adinusa.id -u btacademy --password-stdin
+     #- name: Login to registry Adinusa
+     #  run: |
+     #    echo "${{ secrets.HARBOR_REGISTRY_PASS }}" | docker login registry.adinusa.id -u btacademy --password-stdin
       
+      - uses: docker/login-action@v1
+            with:
+              registry: registry.adinusa.id
+              username: btatest
+              password: ${{ secrets.HARBOR_REGISTRY_PASS }}
+
       - name: Build and Push to Harbor
         run: |
           docker build -t flask-latihan03 .
