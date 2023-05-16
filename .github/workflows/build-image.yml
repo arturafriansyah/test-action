@@ -1,0 +1,19 @@
+name: Build Image in Main
+on:
+  push:
+    branches: main
+
+jobs:
+  Build_docker_Image:
+    runs-on: runner-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check Dir
+        run: |
+          ls -lah build-image
+        
+      - name: Compose Down
+        run: docker build -t myimage:1.0 build-image/.
+      - run: docker image ls
