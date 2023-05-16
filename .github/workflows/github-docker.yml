@@ -19,8 +19,6 @@ jobs:
         run: docker build -t $DOCKER_IMAGE:1.0 canvas-tetris/tetris/.
 
       - name: Deploy Tetris
-        run: |
-          docker-compose -f canvas-tetris/tetris/docker-compose.yml down --rmi all
-          docker-compose -f canvas-tetris/tetris/docker-compose.yml up -d
+        run: docker-compose -f canvas-tetris/tetris/docker-compose.yml up -d
 
     
