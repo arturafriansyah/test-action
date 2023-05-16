@@ -13,14 +13,13 @@ jobs:
       - name: Check Dir
         run: |
           ls -lah
-          cd apps
         
       - name: Compose Down
-        run: docker-compose down --rmi all
+        run: docker-compose -f apps/docker-compose.yml down --rmi all
         
       - name: Compose Build
         run: |
-          docker-compose up -d --build
+          docker-compose -f apps/docker-compose.yml up -d --build
           docker ps -a
           curl localhost:8070
 
