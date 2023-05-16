@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  tetris-game:
+    image: registry.adinusa.id/canvas-tetris/canvas-tetris-afriansyah:1.0
+    ports:
+      - "7071:80"
