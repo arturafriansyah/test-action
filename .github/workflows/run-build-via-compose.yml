@@ -4,7 +4,7 @@ on:
     branches: main
 
 jobs:
-  test:
+  Build Image & Run via Compose:
     runs-on: runner-1
     steps:
       - name: Checkout
@@ -17,4 +17,10 @@ jobs:
         run: docker-compose down --rmi all
         
       - name: Compose Build
-        run: docker-compose up -d --build
+        run: |
+          docker-compose up -d --build
+          docker ps -a
+          curl localhost:8070
+
+      - name: Compose Down Again
+        run: docker-compose down --rmi all
