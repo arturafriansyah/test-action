@@ -1,0 +1,12 @@
+version: '2'
+services: 
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app:1
+    network_mode: bridge
+    restart: always
+    ports:
+      - "8070:80"
