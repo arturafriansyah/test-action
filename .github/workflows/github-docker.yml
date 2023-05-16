@@ -3,7 +3,7 @@ on:
   push:
     branches: main
 env:
-  DOCKER_IMAGE: registry.adinusa.id/canvas-tetris/canvas-tetris-afriansyah
+  DOCKER_IMAGE: canvas-tetris-afriansyah
 
 jobs:
   Canvas_Image:
